@@ -17,37 +17,52 @@
 </head>
 
 <body>
-    <div id='app'>
+    <div id='app' class="bg-dark overflow-auto ">
+
+        <header class="bg-secondary">
+
+        </header>
 
         <h1>DISCHI VUE E PHP</h1>
 
 
-        <!-- <select name="" id="" v-model="selectGenere" @change="ricercaProdotti">
-            <option :value="elem" v-for="(elem, index) in arrayGeneri">{{ elem }}</option>
-        </select> -->
 
-        <!-- <div class="container">
+
+        <!-- MILESTONE 1 -->
+
+        <!-- <ul>
+            <li v-for="(elem, index) in arrayDischi" :key="index">
+                {{ elem.title }}
+            </li>
+        </ul> -->
+
+
+
+
+        <div class="container justify-content-center ">
+            <select name="" id="" v-model="selectGenere" @change="ricercaAlbumPerGenere">
+                <option :value="elem" v-for="(elem, index) in arrayGeneri">{{ elem }}</option>
+            </select>
             <div class="row">
                 <div class="col-4 g-4" v-for="(elem, index) in arrayDischi" :key="index">
-                    <div class="card" style="width: 18rem;"> -->
-        <!-- <img :src="elem.src" class="card-img-top" :alt="elem.titolo"> -->
-        <!-- <div class="card-body">
+                    <div class="card" style="width: 18rem;">
+                        <img :src="elem.poster" class="card-img-top">
+                        <div class="card-body">
                             <h5 class="card-title">{{ elem.title }}</h5>
                             <p class="card-text">
                                 {{ elem.author }}
+                            </p>
+                            <p class="card-text">
+                                {{ elem.year }}
+                            </p>
+                            <p class="card-text">
+                                {{ elem.genre }}
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> -->
-
-
-        <ul>
-            <li v-for="(elem, index) in arrayDischi" :key="index">
-                {{ elem.title }}
-            </li>
-        </ul>
+        </div>
 
 
 
