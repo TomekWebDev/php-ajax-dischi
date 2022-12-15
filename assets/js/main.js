@@ -29,10 +29,18 @@ var app = new Vue({
     },
     methods: {
         ricercaAlbumPerGenere() {
-            axios.get(`./api/index.php?genre=${this.selectGenere}`)
-                .then((res) => {
-                    this.arrayDischi = res.data;
-                });
+            if (this.selectGenere != "all") {
+                axios.get(`./api/index.php?genre=${this.selectGenere}`)
+                    .then((res) => {
+                        this.arrayDischi = res.data;
+                    });
+            } else {
+                axios.get('./api/index.php')
+                    .then((res) => {
+
+                        this.arrayDischi = res.data;
+                    });
+            }
         }
     }
 });

@@ -41,7 +41,9 @@
 
         <div class="container justify-content-center ">
             <select name="" id="" v-model="selectGenere" @change="ricercaAlbumPerGenere">
+                <option selected value="all">All</option>
                 <option :value="elem" v-for="(elem, index) in arrayGeneri">{{ elem }}</option>
+
             </select>
             <div class="row">
                 <div class="col-4 g-4" v-for="(elem, index) in arrayDischi" :key="index">
